@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "1c0a9ec1-86c9-40a4-a5f1-38259681ef5c",
+		"name": "byebnk -desafio mobile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login - jose@exemplo.com",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"jose@exemplo.com\",\n    \"password\": \"jose\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/login",
+					"protocol": "https",
+					"host": [
+						"mrwffgnpgf",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - maria@exemplo.com",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"maria@exemplo.com\",\n    \"password\": \"maria\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/login",
+					"protocol": "https",
+					"host": [
+						"mrwffgnpgf",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver movimentações",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/movimentacoes",
+					"protocol": "https",
+					"host": [
+						"mrwffgnpgf",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"movimentacoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fazer aplicação",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 500.23\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/aplicacao",
+					"protocol": "https",
+					"host": [
+						"mrwffgnpgf",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"aplicacao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fazer resgate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 500.23\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/resgate",
+					"protocol": "https",
+					"host": [
+						"mrwffgnpgf",
+						"execute-api",
+						"sa-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"resgate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
