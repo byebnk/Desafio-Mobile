@@ -10,9 +10,9 @@ O aplicativo deve consumir uma API rest para mostrar os seus resultados e deve c
 especificadas abaixo. Você não precisa se preocupar com a formatação do layout (deixar bonito, etc).
 O foco do desafio são as suas habilidade técnicas e as funcionalidades do aplicativo, não o design.
 
-Você pode organizar o repositório da maneira que achar que faz mais sentido. Além disso, sinta-se
-a vontade para adicionar ferramentas ou funcionalidades que ache relevante, porém não deixe que
-isso impacte negativamente a qualidade dos requisitos obrigatórios.
+Você pode organizar o projeto da maneira que achar que faz mais sentido. Além disso, sinta-se a
+vontade para adicionar ferramentas ou funcionalidades que ache relevante, porém não deixe que isso
+impacte negativamente a qualidade dos requisitos obrigatórios.
 
 Lembre-se: Existem diversas formas de se desenvolver um sistema. Não estamos procurando a resposta
 certa, mas sim uma explicação racional por trás de cada decisão tomada.
@@ -45,29 +45,33 @@ conta.
 
 ## API
 O aplicativo deve ser configurado para utilizar a API abaixo. Todos os seus endpoints com os exemplos
-de requisição estão documentados abaixo. Caso tenha algum problema com a API você pode entrar em
-contato com a gente.
+de requisição estão documentados abaixo. Além disso há uma collection do Postman com exemplos de todos
+os endpoints neste repositório. Caso tenha algum problema com a API você pode entrar em contato com
+a gente.
 
 Por ser um desafio, a API é stateless, isso significa que ela não possui banco de dados e sempre
 retorna os mesmo resultados. Em outras palavras, não se preocupe se você fizer uma aplicação e ela
 não aparecer nas movimentações, os dados retornados são sempre os mesmos. No entanto, você não pode
-usar disso para simplificar o app. Ele precisa funcionar mesmo se a API fosse stateful.
+usar disso para simplificar o app. Ele precisa funcionar mesmo se a API fosse stateful. O código da
+API também está incluso no repositório caso tenha curiosidade de ver.
 
 Por último, a API as vezes encontra alguns problemas internos e retorna um erro 500. Para evitar uma
-sobrecargas nos canais de suporte, é importante que a experiência do usuário não seja completamente
+sobrecarga nos canais de suporte, é importante que a experiência do usuário não seja completamente
 impactada caso erros como esse aconteçam. Você pode colocar uma mensagem de "Tente novamente mais
 tarde" ou implementar a medida que achar necessário para que o usuário entenda que o erro é
 temporário.
 
-NOTA: Os erros 500 são implementados propositalmente na API do desafio. Em toda a requisição existe
-uma chance da API retornar um erro 500. Você consegue diferenciar eles de erros reais pelo conteúdo
-do retorno. Os erros descritos acima possuem uma mensagem avisando que eles são erros propositais.
+**NOTA**: Os erros 500 são implementados propositalmente na API do desafio. Em toda a requisição
+existe uma chance da API retornar um erro 500. Você consegue diferenciar eles de erros reais pelo
+conteúdo do retorno. Os erros descritos acima possuem uma mensagem avisando que eles são erros
+propositais.
 
 
 ### Login
 
 ```
 POST https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/login
+Content-Type: application/json
 
 {"username": "nome-de-usuario", "password": "senha"}
 
@@ -87,6 +91,7 @@ token fornecido pela API no login.
 ### Consultar movimentações
 ```
 GET https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/movimentacoes
+Authorization: token-secreto
 
 
 HTTP/2 200
@@ -96,6 +101,8 @@ HTTP/2 200
 ### Solicitar aplicação
 ```
 PUT https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/aplicacao
+Content-Type: application/json
+Authorization: token-secreto
 
 {"valor": 111.11}
 
@@ -107,6 +114,8 @@ HTTP/2 201
 ### Solicitar resgate
 ```
 PUT https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/resgate
+Content-Type: application/json
+Authorization: token-secreto
 
 {"valor": 111.11}
 
@@ -114,3 +123,11 @@ PUT https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/resgate
 HTTP/2 201
 {"data": "2020-01-01", "valor": 111.11}
 ```
+
+## O que vamos avaliar (nesta ordem)
+1. O cumprimento dos requisitos obrigatórios
+2. A forma que o código está organizado
+3. O domínio das funcionalidade do Framework
+4. A simplicidade da solução
+5. A implementação de requisitos opcionais
+6. A implementação de funcionalidades extras
