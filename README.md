@@ -22,7 +22,7 @@ Desenvolva um aplicativo mobile para Android/iOS de gestão de investimentos.
 
 ## Telas
 O aplicativo deve conter no mínimo as três telas abaixo. Você pode separar as funcionalidade em mais
-telas caso acredite que faça mais sentido, porém não pode juntar funcionalidades de delas diferentes
+telas caso acredite que faça mais sentido, porém não pode juntar funcionalidades de telas diferentes
 em uma só (exemplo: criar apenas uma tela para ver as movimentações e fazer uma aplicação).
 
 ### 1. Login
@@ -65,6 +65,10 @@ temporário.
 existe uma chance da API retornar um erro 500. Você consegue diferenciar eles de erros reais pelo
 conteúdo do retorno. Os erros descritos acima possuem uma mensagem avisando que eles são erros
 propositais.
+
+```
+Fake error to test how your application can handle unexpected events
+```
 
 
 ### Login
