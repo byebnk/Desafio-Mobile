@@ -32,11 +32,9 @@ o usuário deve ser forçado a realizar o login antes de acessar qualquer outra 
 ### 2. Movimentações e saldo
 Esta é a tela inicial do app após o login, nela o usuário pode ver todas as movimentações que foram
 feitas na sua conta (aplicações e resgate) e também o saldo da sua conta (saldo = aplicações - resgates).
-A API não retorna o saldo da conta, ele deve ser calculado manuamente no app. Para facilitar a
-visualização por parte do usuário é importante que as aplicações e resgates sejam visualmente
-diferentes (uma sugestão pode ser utilizar uma cor para aplicação e outra para resgate, porém fica
-ao seu critério como fazer). Por último, deve ser possível o usuário atualizar (no sentido de fazer
-uma nova requisição para o servidor) o seu saldo/movimentações sem precisar fechar e abrir o aplicativo.
+
+* A API não retorna o saldo da conta, ele deve ser calculado manuamente no app.
+* Deve ser possível o usuário atualizar (no sentido de fazer uma nova requisição para o servidor) o seu saldo/movimentações sem precisar fechar e abrir o aplicativo.
 
 ### 3. Realizar aplicação ou resgate
 Nesta tela o usuário pode estipular um valor e fazer uma aplicação ou resgate na sua conta. Aplicação
@@ -55,6 +53,7 @@ não aparecer nas movimentações, os dados retornados são sempre os mesmos. No
 usar disso para simplificar o app. Ele precisa funcionar mesmo se a API fosse stateful. O código da
 API também está incluso no repositório caso tenha curiosidade de ver.
 
+### Tratamento de erros da API
 Por último, a API as vezes encontra alguns problemas internos e retorna um erro 500. Para evitar uma
 sobrecarga nos canais de suporte, é importante que a experiência do usuário não seja completamente
 impactada caso erros como esse aconteçam. Você pode colocar uma mensagem de "Tente novamente mais
@@ -71,7 +70,7 @@ Fake error to test how your application can handle unexpected events
 ```
 
 
-### Login
+### 1. Login
 
 ```
 POST https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/login
@@ -87,12 +86,14 @@ HTTP/2 200
 Para se autenticar nas outras chamadas você deve incluir o header `Authorization` com o valor do
 token fornecido pela API no login.
 
+#### Usuários disponíveis
+
 | Usuário | Senha |
 |---|---|
 | jose@exemplo.com | jose |
 | maria@exemplo.com | maria |
 
-### Consultar movimentações
+### 2. Consultar movimentações
 ```
 GET https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/movimentacoes
 Authorization: token-secreto
@@ -102,7 +103,7 @@ HTTP/2 200
 {"movimentacoes": [{"tipo": "aplicacao", "data": "2020-01-01", "valor": 111.11}, {"tipo": "resgate", "data": "2020-01-01", "valor": 111.11}]}
 ```
 
-### Solicitar aplicação
+### 3. Solicitar aplicação
 ```
 PUT https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/aplicacao
 Content-Type: application/json
@@ -115,7 +116,7 @@ HTTP/2 201
 {"data": "2020-01-01", "valor": 111.11}
 ```
 
-### Solicitar resgate
+### 4. Solicitar resgate
 ```
 PUT https://mrwffgnpgf.execute-api.sa-east-1.amazonaws.com/prod/resgate
 Content-Type: application/json
