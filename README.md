@@ -20,14 +20,13 @@ certa, mas sim uma explicação racional por trás de cada decisão tomada.
 ## Requisitos obrigatórios
 Desenvolva um aplicativo mobile para Android/iOS de gestão de investimentos.
 
-## Telas
 O aplicativo deve conter no mínimo as três telas abaixo. Você pode separar as funcionalidade em mais
 telas caso acredite que faça mais sentido, porém não pode juntar funcionalidades de telas diferentes
 em uma só (exemplo: criar apenas uma tela para ver as movimentações e fazer uma aplicação).
 
 ### 1. Login
 O login é realizado utilizando o email e senha do usuário. Ao acessar o aplicativo pela primeira vez
-o usuário deve ser forçado a realizar o login antes de acessar qualquer outra funcionalidade.
+o usuário deve realizar o login antes de acessar qualquer outra funcionalidade.
 
 ### 2. Movimentações e saldo
 Esta é a tela inicial do app após o login, nela o usuário pode ver todas as movimentações que foram
@@ -41,7 +40,9 @@ Nesta tela o usuário pode estipular um valor e fazer uma aplicação ou resgate
 é quando o usuário aporta dinheiro em sua conta. Resgate é quando o usuário retira dinheiro da sua
 conta.
 
-## API
+----------------------
+
+## Documentação da API
 O aplicativo deve ser configurado para utilizar a API abaixo. Todos os seus endpoints com os exemplos
 de requisição estão documentados abaixo. Além disso há uma collection do Postman com exemplos de todos
 os endpoints neste repositório. Caso tenha algum problema com a API você pode entrar em contato com
@@ -132,7 +133,7 @@ HTTP/2 201
 ## O que vamos avaliar (nesta ordem)
 1. O cumprimento dos requisitos obrigatórios
 2. A forma que o código está organizado
-3. O domínio das funcionalidade do Framework
+3. O domínio das funcionalidade do framework
 4. A simplicidade da solução
 5. A implementação de requisitos opcionais
 6. A implementação de funcionalidades extras
