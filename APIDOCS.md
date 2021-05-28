@@ -1,14 +1,14 @@
 # Documentação da API
 O aplicativo deve ser configurado para utilizar a API abaixo. Todos os seus endpoints com os exemplos
-de requisição estão documentados abaixo. Além disso há uma collection do Postman com exemplos de todos
+de requisição estão documentados abaixo. Além disso há uma [collection do Postman](https://gitlab.com/byebnk/desafio-mobile/-/blob/master/desafio-mobile.postman_collection.json) com exemplos de todos
 os endpoints neste repositório. Caso tenha algum problema com a API você pode entrar em contato com
 a gente.
 
 Por ser um desafio, a API é stateless, isso significa que ela não possui banco de dados e sempre
 retorna os mesmo resultados. Em outras palavras, não se preocupe se você fizer uma aplicação e ela
 não aparecer nas movimentações, os dados retornados são sempre os mesmos. No entanto, você não pode
-usar disso para simplificar o app. Ele precisa funcionar mesmo se a API fosse stateful. O código da
-API também está incluso no repositório caso tenha curiosidade de ver.
+usar disso para simplificar o app. Ele precisa funcionar mesmo se a API fosse stateful. O [código da
+API](https://gitlab.com/byebnk/desafio-mobile/-/blob/master/api.py) também está incluso no repositório caso tenha curiosidade de ver.
 
 ## Tratamento de erros da API
 Por último, a API as vezes encontra alguns problemas internos e retorna um erro 500. Para evitar uma
