@@ -41,7 +41,7 @@ def dispatcher(request):
         return {'statusCode': 500, 'body': 'Fake error to test how your application can handle unexpected events'}
 
     if request['body']:
-        if request['headers'].get('content-type') != 'application/json':
+        if not request['headers'].get('content-type', '').startswith('application/json'):
             return {'statusCode': 415, 'body': 'Invalid Content-Type: This server only supports application/json'}
         try:
             request['body'] = json.loads(request['body'])
